@@ -1,0 +1,22 @@
+{
+  "name": "spotify_app",
+  "version": "1.0.0",
+  "description": "Don't know yet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "spotify",
+    "api"
+  ],
+  "author": "ClaudioG",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "query-string": "^6.4.2",
+    "request": "^2.88.0"
+  }
+}
