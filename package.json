@@ -10,6 +10,10 @@
     "spotify",
     "api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudiogn/spotify-web-app.git"
+  },
   "author": "ClaudioG",
   "license": "ISC",
   "dependencies": {

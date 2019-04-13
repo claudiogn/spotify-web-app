@@ -48,8 +48,29 @@ app.get('/callback', function(req, res){
       },
       json: true
     }
+    request.post(authOptions, function(error, response, body){
+      if (!error && response.statusCode === 200) {
+        var access_token = body.access_token,
+            refresh_token  = body.refresh_token
+            console.log(body)
+        var options = {
+          url: 'https://api.spotify.com/v1/me',
+          headers: { 'Authorization': 'Bearer ' + access_token },
+          json: true
+        }
+
+        request.get(options, function(error, response, body) {
+          console.log(body);
+        });
+        res.redirect('/?' +
+          querystring.stringify({
+                  access_token: access_token,
+                  refresh_token: refresh_token
+          })
+        )
+      }
+    })
   }
-  res.send(req.query)
 })
 
 app.get('/', function(req, res){
