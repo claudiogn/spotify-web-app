@@ -1,2 +1,2 @@
 # spotify-web-app
-A web application to lern how to use Spotify API
+A web application to learn how to use Spotify API
