@@ -7,8 +7,8 @@ var app = express();
 app.use(express.static(__dirname + '/public'))
    .use(cors())
 
-var client_id = '00eea618f92c4392a5d2dc2b1290cf78'
-var client_secret = '7d5febeb6a21426fb8f476f973f1c7ab'
+var client_id = ''
+var client_secret = ''
 var redirect_uri = 'http://localhost:3000/callback'
 
 app.get('/login', function(req, res){
