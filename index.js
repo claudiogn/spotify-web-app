@@ -57,7 +57,7 @@ app.get('/callback', function(req, res){
         }
         request.get(options, function(error, response, body) {
           var json = JSON.stringify(body.items);
-          fs.writeFileSync('results.json', json, function(err){
+          fs.writeFile('results.json', json, function(err){
             if(err){
               return console.log('ERRO')
             }
@@ -76,10 +76,11 @@ app.get('/callback', function(req, res){
 
 app.get('/', function(req, res){
   var artists = []
-  var fileBuffer = fs.readFileSync('results.json', 'utf8')
-  var artists = JSON.parse(fileBuffer)
-  res.render('pages/index', {
-    artists: artists
+  fs.readFile('results.json', function(err, data){
+    artists = JSON.parse(data)
+    res.render('pages/index', {
+      artists: artists
+    })
   })
 })
 
